@@ -27,6 +27,7 @@ class ACFWF_Webform {
         'post_status' => 'publish',
       );
     } else {
+      $this->options['post_id'] = $this->post_id;
       $this->options['new_post'] = false;
     }
 
