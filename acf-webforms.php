@@ -22,7 +22,7 @@ class ACF_Webforms {
     require('src/WebformShortcode.php');
     require('src/WebformPostType.php');
     require('src/WebformSettings.php');
-    //add_action('init', array( $this, 'includeAcfFields' ));
+    add_action('init', array( $this, 'includeAcfFields' ));
     add_action('init', array( $this, 'addAcfWebformPostType' ));
     add_action('get_header', array( $this, 'acfFormHeader' ));
     add_shortcode('webform', array( $this, 'shortcodeWebform' ));
