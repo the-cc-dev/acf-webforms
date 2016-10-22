@@ -14,7 +14,8 @@ class ACFWF_WebformShortcode {
 
   public function render() {
     $post = ACFWF_WebformPostType::getPostByID( $this->id );
-    $settings = ACFWF_Settings::parseSettingsFromFields( $post->fields );
+    $wfs = new ACFWF_Settings;
+    $settings = $wfs->parseSettingsFromFields( $post->fields );
     $webform = new ACFWF_Webform( $settings );
     return $webform->build();
   }
